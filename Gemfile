@@ -19,6 +19,15 @@ gem 'rails-assets-underscore'
 gem 'rails-assets-jquery-ujs'
 gem 'rails-assets-ratchet', '2.0.2'
 
+# Devise for user authentication
+gem 'devise'
+
+# Cancan for user authorization
+gem 'cancan'
+
+# Rails Admin for Administration
+gem 'rails_admin'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
