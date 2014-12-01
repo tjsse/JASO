@@ -1,0 +1,20 @@
+<%= render :partial => 'common/header' %>
+
+<div class="content">
+  <ul class="table-view">
+    <% @activities.each do |activity| %>
+    <li class="table-view-cell media">
+      <a class="navigate-right">
+        <img class="media-object pull-left" src="http://placehold.it/42x42">
+        <div class="media-body">
+          <%= activity.title %>
+          <p><%= activity.summary %></p>
+        </div>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+
+<%= render :partial => 'common/nav' %>
