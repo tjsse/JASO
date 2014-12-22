@@ -1,3 +1,8 @@
+<% back_left = false if local_assigns[:back_left].nil? %>
+
 <header class="bar bar-nav">
+  <% if back_left %>
+  <a class="icon icon-left-nav pull-left" href="<%= activities_path %>" data-transition="slide-out"></a>
+  <% end %>
   <h1 class="title">乐在嘉实</h1>
 </header>

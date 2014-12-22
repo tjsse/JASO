@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => 'common/header', :locals => { :back_left => true } %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @activity.title %>
-</p>
+<div class="content">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @activity.summary %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @activity.title %>
+  </p>
 
-<p>
-  <strong>Detail:</strong>
-  <%= @activity.detail %>
-</p>
+  <p>
+    <%= image_tag @activity.feature_image.url(:middle) %>
+  </p>
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+  <p>
+    <%= @activity.detail %>
+  </p>
+
+  <%= link_to 'Edit', edit_activity_path(@activity) %> |
+  <%= link_to 'Back', activities_path %>
+</div>
+
+
+<%= render :partial => 'common/nav' %>

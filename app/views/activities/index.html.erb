@@ -4,10 +4,10 @@
   <ul class="table-view">
     <% @activities.each do |activity| %>
     <li class="table-view-cell media">
-      <a class="navigate-right">
-        <img class="media-object pull-left" src="http://placehold.it/42x42">
+      <a class="navigate-right" href="<%= activity_path(activity) %>" data-transition="slide-in">
         <div class="media-body">
           <%= activity.title %>
+          <%= image_tag activity.feature_image.url(:middle) %>
           <p><%= activity.summary %></p>
         </div>
       </a>

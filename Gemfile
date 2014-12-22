@@ -1,5 +1,6 @@
-source 'https://ruby.taobao.org'
+source 'https://rubygems.org'
 source 'https://rails-assets.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
@@ -19,11 +20,14 @@ gem 'rails-assets-underscore'
 gem 'rails-assets-jquery-ujs'
 gem 'rails-assets-ratchet', '2.0.2'
 
+# Paperclip for image upload
+gem 'paperclip'
+
 # Devise for user authentication
 gem 'devise'
 
 # Cancan for user authorization
-gem 'cancan'
+gem 'cancan'  
 
 # Rails Admin for Administration
 gem 'rails_admin'
