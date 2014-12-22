@@ -1,8 +1,20 @@
 <%= render :partial => 'common/header' %>
 
 <div class="content">
-
+  <ul class="table-view">
+    <% @shops.each do |shop| %>
+    <li class="table-view-cell media">
+      <a class="navigate-right" href="<%= shop_path(shop) %>" data-transition="slide-in">
+        <div class="media-body">
+          <%= shop.name %>
+          <%= image_tag shop.feature_image.url(:middle) %>
+          <p><%= shop.description %></p>
+        </div>
+      </a>
+    </li>
+    <% end %>
+  </ul>
 </div>
 
 
-<%= render :partial => 'common/nav' %>
+<%= render :partial => 'common/nav', :locals => { section: 'shops' } %>

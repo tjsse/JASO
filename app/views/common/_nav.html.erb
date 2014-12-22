@@ -1,22 +1,22 @@
 <nav class="bar bar-tab">
-  <a class="tab-item active" href="<%= shops_path %>">
+  <a class="tab-item <% if section == 'shops' %> active <% end %>" href="<%= shops_path %>">
     <span class="icon icon-home"></span>
     <span class="tab-label">店铺</span>
   </a>
-  <a class="tab-item" href="#">
+  <a class="tab-item <% if section == 'coupons' %> active <% end %>" href="#">
     <span class="icon icon-person"></span>
-    <span class="tab-label">Profile</span>
+    <span class="tab-label">优惠</span>
   </a>
-  <a class="tab-item" href="<%= activities_path %>">
+  <a class="tab-item <% if section == 'activities' %> active <% end %>" href="<%= activities_path %>">
     <span class="icon icon-star-filled"></span>
     <span class="tab-label">活动</span>
   </a>
-  <a class="tab-item" href="#">
+  <a class="tab-item <% if section == 'search' %> active <% end %>" href="#">
     <span class="icon icon-search"></span>
-    <span class="tab-label">Search</span>
+    <span class="tab-label">探索</span>
   </a>
-  <a class="tab-item" href="#">
+  <a class="tab-item <% if section == 'map' %> active <% end %>" href="#">
     <span class="icon icon-gear"></span>
-    <span class="tab-label">Settings</span>
+    <span class="tab-label">地图</span>
   </a>
 </nav>

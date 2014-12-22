@@ -2,7 +2,14 @@
 
 <header class="bar bar-nav">
   <% if back_left %>
-  <a class="icon icon-left-nav pull-left" href="<%= activities_path %>" data-transition="slide-out"></a>
+  <a class="icon icon-left-nav pull-left" href="
+    <% case section %>
+    <% when 'activities' %>
+      <%= activities_path %>
+    <% when 'shops' %>
+      <%= shops_path %>
+    <% end %>
+    " data-transition="slide-out"></a>
   <% end %>
   <h1 class="title">乐在嘉实</h1>
 </header>

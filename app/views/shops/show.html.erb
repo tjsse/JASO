@@ -1,19 +1,17 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => 'common/header', :locals => { :back_left => true, :section => 'shops' } %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @shop.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @shop.description %>
-</p>
+<div class="content">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description detail:</strong>
-  <%= @shop.description_detail %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @shop.name %>
+  </p>
 
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+  <p>
+    <strong>Description detail:</strong>
+    <%= @shop.description_detail %>
+  </p>
+</div>
+
