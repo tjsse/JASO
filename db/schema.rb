@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224115923) do
+ActiveRecord::Schema.define(version: 20141224174254) do
 
   create_table "activities", force: true do |t|
     t.string   "title"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 20141224115923) do
     t.datetime "feature_image_updated_at"
   end
 
+# Could not dump table "coupon_use_records" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
   create_table "coupons", force: true do |t|
     t.string   "title"
     t.string   "subtitle"
@@ -36,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141224115923) do
     t.string   "feature_image_content_type"
     t.integer  "feature_image_file_size"
     t.datetime "feature_image_updated_at"
+    t.integer  "use_limit",                  default: 0
   end
 
   add_index "coupons", ["shop_id"], name: "index_coupons_on_shop_id"

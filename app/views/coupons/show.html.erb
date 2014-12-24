@@ -12,5 +12,16 @@
   <p>
     <%= @coupon.detail %>
   </p>
+
+  <p>
+    <form action="<%= consume_coupon_path(@coupon) %>" method="POST">
+      <div>
+        <input type="text" name="phone_number" placeholder="Phone Number">
+      </div>
+      <div>
+        <input type="submit" value="提交">
+      </div>
+    </form>
+  </p>
 </div>
 

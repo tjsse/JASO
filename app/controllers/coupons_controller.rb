@@ -1,5 +1,5 @@
 class CouponsController < ApplicationController
-  before_action :set_coupon, only: [:show, :edit, :update, :destroy]
+  before_action :set_coupon, only: [:show, :edit, :update, :destroy, :consume]
 
   respond_to :html
 
@@ -34,6 +34,12 @@ class CouponsController < ApplicationController
   def destroy
     @coupon.destroy
     respond_with(@coupon)
+  end
+
+  def consume
+    if params.include?(:phone_number)
+      @status = @coupon.consume(params[:phone_number])
+    end
   end
 
   private

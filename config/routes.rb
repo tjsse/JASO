@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'search', :controller => :search, :action => :index, :as => :search
 
-  resources :coupons
+  resources :coupons do
+    member do
+      post 'consume'
+    end
+  end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
