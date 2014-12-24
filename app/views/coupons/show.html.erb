@@ -1,0 +1,16 @@
+<%= render :partial => 'common/header', :locals => { :back_left => true, :section => 'coupons' } %>
+
+
+<div class="content">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @coupon.title %>
+  </p>
+
+  <p>
+    <%= @coupon.detail %>
+  </p>
+</div>
+

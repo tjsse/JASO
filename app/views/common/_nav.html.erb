@@ -3,7 +3,7 @@
     <span class="icon icon-home"></span>
     <span class="tab-label">店铺</span>
   </a>
-  <a class="tab-item <% if section == 'coupons' %> active <% end %>" href="#">
+  <a class="tab-item <% if section == 'coupons' %> active <% end %>" href="<%= coupons_path %>">
     <span class="icon icon-person"></span>
     <span class="tab-label">优惠</span>
   </a>
@@ -11,7 +11,7 @@
     <span class="icon icon-star-filled"></span>
     <span class="tab-label">活动</span>
   </a>
-  <a class="tab-item <% if section == 'search' %> active <% end %>" href="#">
+  <a class="tab-item <% if section == 'search' %> active <% end %>" href="<%= search_path %>">
     <span class="icon icon-search"></span>
     <span class="tab-label">探索</span>
   </a>

@@ -1,0 +1,36 @@
+<%= render :partial => 'common/header' %>
+
+<div class="content">
+  <div class="bar bar-standard bar-header-secondary">
+    <form action="/search" method="GET">
+      <input type="text" name="keyword" placeholder="Search">
+    </form>
+  </div>
+  <div class="" style="margin-top: 44px;">
+    <% if not @keyword.nil? %>
+      优惠券
+      <% @coupons.each do |coupon| %>
+        <div>
+          <%= coupon.title %>
+        </div>
+      <% end %>
+      活动
+      <% @activities.each do |activity| %>
+        <div>
+          <%= activity.title %>
+        </div>
+      <% end %>
+      店铺
+      <% @shops.each do |shop| %>
+        <div>
+          <%= shop.name %>
+        </div>
+      <% end %>
+    <% else %>
+      欢迎搜索
+    <% end %>
+  </div>
+</div>
+
+
+<%= render :partial => 'common/nav', :locals => { section: 'search' } %>
