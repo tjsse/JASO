@@ -25,7 +25,7 @@ class Coupon < ActiveRecord::Base
     req_header['Content-Type']               = 'application/json'
 
     Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
-      # res = http.post('/1.1/requestSmsCode', "{\"mobilePhoneNumber\":\"#{phone_number}\"}", req_header)
+      res = http.post('/1.1/requestSmsCode', "{\"mobilePhoneNumber\":\"#{phone_number}\"}", req_header)
       
       coupon_use_record = CouponUseRecord.new
       coupon_use_record.phone_number = phone_number
