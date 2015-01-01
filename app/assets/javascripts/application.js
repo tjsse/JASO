@@ -14,4 +14,4 @@
 //= require jquery-ujs
 //= require underscore
 //= require ratchet
-//= require_tree .
+//= require_tree ./common

@@ -1,14 +1,14 @@
 <nav class="bar bar-tab">
   <a class="tab-item <% if section == 'shops' %> active <% end %>" href="<%= shops_path %>">
-    <span class="icon icon-home"></span>
+    <%= fa_icon 'building', :class => 'icon' %>
     <span class="tab-label">店铺</span>
   </a>
   <a class="tab-item <% if section == 'coupons' %> active <% end %>" href="<%= coupons_path %>">
-    <span class="icon icon-person"></span>
+    <%= fa_icon 'list-alt', :class => 'icon' %>
     <span class="tab-label">优惠</span>
   </a>
   <a class="tab-item <% if section == 'activities' %> active <% end %>" href="<%= activities_path %>">
-    <span class="icon icon-star-filled"></span>
+    <%= fa_icon 'child', :class => 'icon' %>
     <span class="tab-label">活动</span>
   </a>
   <a class="tab-item <% if section == 'search' %> active <% end %>" href="<%= search_path %>">
@@ -16,7 +16,7 @@
     <span class="tab-label">探索</span>
   </a>
   <a class="tab-item <% if section == 'map' %> active <% end %>" href="<%= map_path %>">
-    <span class="icon icon-gear"></span>
+    <%= fa_icon 'globe', :class => 'icon' %>
     <span class="tab-label">地图</span>
   </a>
 </nav>
