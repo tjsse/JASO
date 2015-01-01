@@ -28,5 +28,14 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    if user
+        can :access, :rails_admin
+        can :dashboard
+        if user.role == 'admin'
+            can :manage, :all
+        else
+            can :manage, Shop, :user_id => user.id
+        end
+    end
   end
 end

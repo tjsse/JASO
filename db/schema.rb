@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141225112735) do
+ActiveRecord::Schema.define(version: 20141230130439) do
 
   create_table "activities", force: true do |t|
     t.string   "title"
@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20141225112735) do
     t.string   "feature_image_content_type"
     t.integer  "feature_image_file_size"
     t.datetime "feature_image_updated_at"
+    t.integer  "shop_id"
   end
+
+  add_index "activities", ["shop_id"], name: "index_activities_on_shop_id"
 
   create_table "coupon_use_records", force: true do |t|
     t.string   "phone_number"
@@ -59,24 +62,32 @@ ActiveRecord::Schema.define(version: 20141225112735) do
     t.string   "feature_image_content_type"
     t.integer  "feature_image_file_size"
     t.datetime "feature_image_updated_at"
+    t.integer  "user_id"
+    t.float    "cord_x"
+    t.float    "cord_y"
   end
 
+  add_index "shops", ["user_id"], name: "index_shops_on_user_id"
+
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",       null: false
+    t.string   "encrypted_password",     default: "",       null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,        null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role",                   default: "seller"
+    t.integer  "shop_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["shop_id"], name: "index_users_on_shop_id"
 
 end

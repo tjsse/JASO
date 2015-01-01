@@ -1,13 +1,15 @@
 <%= render :partial => 'common/header' %>
 
-<div class="content">
-  <ul class="table-view">
+<div class="content activities activities-index common-cardlist">
+  <ul class="table-view no-border">
     <% @activities.each do |activity| %>
-    <li class="table-view-cell media">
-      <a class="navigate-right" href="<%= activity_path(activity) %>" data-transition="slide-in">
-        <div class="media-body">
-          <%= activity.title %>
-          <%= image_tag activity.feature_image.url(:middle) %>
+    <li class="table-view-cell media common-card mb10">
+      <a class="navigate-right disp-block no-padding no-margin" href="<%= activity_path(activity) %>" data-transition="slide-in">
+        <div class="feature-img-wrap">
+          <%= image_tag activity.feature_image.url(:middle), :class => 'feature-img' %>
+        </div>
+        <div class="content-wrap plr20 ptb10">
+          <p class="common-heading"><%= activity.title %></p>
           <p><%= activity.summary %></p>
         </div>
       </a>

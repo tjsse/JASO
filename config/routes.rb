@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
+
+  get 'map/index', :as => :map
   get 'search', :controller => :search, :action => :index, :as => :search
+
+
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
 
   resources :coupons do
     member do
       post 'consume'
     end
-  end
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  end 
   resources :shops
   resources :activities
   root 'activities#index'
