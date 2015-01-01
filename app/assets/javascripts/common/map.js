@@ -1,5 +1,3 @@
-
-
 $(window).bind('load push', function(event) {
   if (location.pathname !== '/map/index') return;
   var position=new AMap.LngLat(121.22131,31.287747);

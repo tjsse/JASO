@@ -1,19 +1,54 @@
 <%= render :partial => 'common/header', :locals => { :back_left => true, :section => 'shops' } %>
 
 
-<div class="content common-show plr10">
-  <header class="mt10 mb10">
-    <h1 class="common-heading">
-      <%= @shop.name %>
-    </h1> 
-  </header>
-  
-  <div class="feature-img-wrap">
-    <%= image_tag @shop.feature_image.url(:middle), :class => 'feature-img' %>
-  </div>
+<div class="content common-show ">
+  <section class="main plr10">
+    <header class="mt10 mb10">
+      <h1 class="common-heading">
+        <%= @shop.name %>
+      </h1> 
+      <div>
+        <span>
+          <%= fa_icon 'phone' %>
+          <%= link_to @shop.phone_number, '#' %>
+        </span>
+      </div>
+    </header>
+    
+    <div class="feature-img-wrap">
+      <%= image_tag @shop.feature_image.url(:middle), :class => 'feature-img' %>
+    </div>
 
-  <p>
-    <%= @shop.description_detail %>
-  </p>
+    <p>
+      <%= @shop.description_detail %>
+    </p>
+  </section>
+
+  <section class="sub">
+    <header class="mb10 plr10">
+      <%= fa_icon 'empire' %>
+      优惠券
+    </header>
+
+    <ul class="table-view no-border">
+      <% @shop.coupons.each do |coupon| %>
+        <%= render :partial => 'coupons/listitem', :locals => { coupon: coupon } %>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="sub">
+    <header class="mb10 plr10">
+      <%= fa_icon 'empire' %>
+      活动
+    </header>
+
+    <ul class="table-view no-border">
+      <% @shop.activities.each do |activity| %>
+        <%= render :partial => 'activities/listitem', :locals => { activity: activity } %>
+      <% end %>
+    </ul>
+  </section>
 </div>
+
 

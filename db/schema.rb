@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230130439) do
+ActiveRecord::Schema.define(version: 20150101134139) do
 
   create_table "activities", force: true do |t|
     t.string   "title"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20141230130439) do
     t.integer  "user_id"
     t.float    "cord_x"
     t.float    "cord_y"
+    t.string   "phone_number"
   end
 
   add_index "shops", ["user_id"], name: "index_shops_on_user_id"
