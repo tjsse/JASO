@@ -19,6 +19,7 @@ gem 'rails-assets-jquery'
 gem 'rails-assets-underscore'
 gem 'rails-assets-jquery-ujs'
 gem 'rails-assets-ratchet', '2.0.2'
+gem 'font-awesome-rails'
 
 # Paperclip for image upload
 gem 'paperclip'

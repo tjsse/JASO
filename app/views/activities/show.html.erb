@@ -1,21 +1,23 @@
 <%= render :partial => 'common/header', :locals => { :back_left => true, :section => 'activities' } %>
 
-<div class="content">
-  <p id="notice"><%= notice %></p>
+<div class="content common-show pt10 plr10">
+  <header class="mt10 mb10">
+    <h1 class="common-heading">
+      <%= @activity.title %>
+    </h1> 
+    <div>
+      <span>
+        <%= fa_icon 'building' %>
+        <%= link_to @activity.shop.name, shop_path(@activity.shop) %>
+      </span>
+    </div>
+  </header>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @activity.title %>
-  </p>
-
-  <p>
-    <%= image_tag @activity.feature_image.url(:middle) %>
-  </p>
+  <div class="feature-img-wrap">
+    <%= image_tag @activity.feature_image.url(:middle), :class => 'feature-img' %>
+  </div>
 
   <p>
     <%= @activity.detail %>
   </p>
-
-  <%= link_to 'Edit', edit_activity_path(@activity) %> |
-  <%= link_to 'Back', activities_path %>
 </div>

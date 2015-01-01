@@ -1,13 +1,22 @@
 <%= render :partial => 'common/header', :locals => { :back_left => true, :section => 'coupons' } %>
 
 
-<div class="content">
-  <p id="notice"><%= notice %></p>
+<div class="content common-show plr10">
+  <header class="mt10 mb10">
+    <h1 class="common-heading">
+      <%= @coupon.title %>
+    </h1>
+    <div>
+      <span>
+        <%= fa_icon 'building' %>
+        <%= link_to @coupon.shop.name, shop_path(@coupon.shop) %>
+      </span>
+    </div>
+  </header>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @coupon.title %>
-  </p>
+  <div class="feature-img-wrap">
+    <%= image_tag @coupon.feature_image.url(:middle), :class => 'feature-img' %>
+  </div>
 
   <p>
     <%= @coupon.detail %>
@@ -16,10 +25,10 @@
   <p>
     <form action="<%= consume_coupon_path(@coupon) %>" method="POST">
       <div>
-        <input type="text" name="phone_number" placeholder="Phone Number">
+        <input type="text" name="phone_number" placeholder="输入手机号使用">
       </div>
       <div>
-        <input type="submit" value="提交">
+        <input type="submit" value="提交" class="btn btn-primary">
       </div>
     </form>
   </p>

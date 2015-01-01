@@ -1,0 +1,19 @@
+<li class="table-view-cell media common-card mb10">
+  <a class="navigate-right disp-block no-padding no-margin" href="<%= shop_path(shop) %>" data-transition="slide-in">
+    <div class="feature-img-wrap">
+      <%= image_tag shop.feature_image.url(:middle), :class => 'feature-img' %>
+    </div>
+    <div class="content-wrap plr20 ptb10">
+      <p class="common-heading"><%= shop.name %></p>
+      <p><%= shop.description %></p>
+      <p class="mt5">
+        <span>
+          <%= fa_icon 'child' %> <%= shop.activities.size %> 个活动
+        </span>
+        <span class="ml20">
+          <%= fa_icon 'list-alt' %> <%= shop.coupons.size %> 个优惠券
+        </span>
+      </p>
+    </div>
+  </a>
+</li> 

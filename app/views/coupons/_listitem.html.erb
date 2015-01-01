@@ -1,0 +1,11 @@
+<li class="table-view-cell media common-card mb10">
+  <a class="navigate-right disp-block no-padding no-margin" href="<%= coupon_path(coupon) %>" data-transition="slide-in">
+    <div class="feature-img-wrap">
+      <%= image_tag coupon.feature_image.url(:middle), :class => 'feature-img' %>
+    </div>
+    <div class="content-wrap plr20 ptb10">
+      <p class="common-heading"><%= coupon.title %></p>
+      <p><%= coupon.subtitle %></p>
+    </div>
+  </a>
+</li> 

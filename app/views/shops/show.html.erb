@@ -1,16 +1,18 @@
 <%= render :partial => 'common/header', :locals => { :back_left => true, :section => 'shops' } %>
 
 
-<div class="content">
-  <p id="notice"><%= notice %></p>
+<div class="content common-show plr10">
+  <header class="mt10 mb10">
+    <h1 class="common-heading">
+      <%= @shop.name %>
+    </h1> 
+  </header>
+  
+  <div class="feature-img-wrap">
+    <%= image_tag @shop.feature_image.url(:middle), :class => 'feature-img' %>
+  </div>
 
   <p>
-    <strong>Name:</strong>
-    <%= @shop.name %>
-  </p>
-
-  <p>
-    <strong>Description detail:</strong>
     <%= @shop.description_detail %>
   </p>
 </div>

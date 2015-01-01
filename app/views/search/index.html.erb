@@ -1,33 +1,41 @@
 <%= render :partial => 'common/header' %>
 
-<div class="content">
-  <div class="bar bar-standard bar-header-secondary">
+<div class="content search">
+  <div class="bar bar-standard bar-header-secondary mt10">
     <form action="/search" method="GET">
       <input type="text" name="keyword" placeholder="Search">
     </form>
   </div>
-  <div class="" style="margin-top: 44px;">
+  <div class="mt60">
     <% if not @keyword.nil? %>
-      优惠券
-      <% @coupons.each do |coupon| %>
-        <div>
-          <%= coupon.title %>
+      <% if @coupons.size + @activities.size + @shops.size == 0 %>
+        <div class="text-center">
+          <%= fa_icon "frown-o", :class => 'feature-icon' %>
         </div>
-      <% end %>
-      活动
-      <% @activities.each do |activity| %>
-        <div>
-          <%= activity.title %>
+        <div class="text-center text-hint">
+          没有搜素到相应结果
         </div>
-      <% end %>
-      店铺
-      <% @shops.each do |shop| %>
-        <div>
-          <%= shop.name %>
+      <% else %>
+        <div class="common-cardlist">
+          <ul class="table-view no-border">
+            <% @coupons.each do |coupon| %>
+              <%= render :partial => 'coupons/listitem', :locals => { coupon: coupon } %>
+            <% end %>
+
+            <% @activities.each do |activity| %>
+              <%= render :partial => 'activities/listitem', :locals => { activity: activity } %>
+            <% end %>
+
+            <% @shops.each do |shop| %>
+              <%= render :partial => 'shops/listitem', :locals => { shop: shop } %>   
+            <% end %>
+          </ul>
         </div>
       <% end %>
     <% else %>
-      欢迎搜索
+      <div class="text-center">
+        <%= fa_icon "binoculars", :class => 'feature-icon' %>
+      </div>
     <% end %>
   </div>
 </div>

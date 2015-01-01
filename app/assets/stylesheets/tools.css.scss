@@ -2,6 +2,14 @@
   display: block;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-hint {
+  color: #e8e8e8;
+}
+
 .no-margin {
   margin: 0 !important;
 }
@@ -19,6 +27,11 @@
   padding-right: 20px;
 }
 
+.plr10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .ptb10 {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -26,6 +39,22 @@
 
 .mb10 {
   margin-bottom: 10px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.ml20 {
+  margin-left: 20px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mt60 {
+  margin-top: 60px;
 }
 
 .pt100 {

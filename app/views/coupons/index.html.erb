@@ -1,17 +1,9 @@
 <%= render :partial => 'common/header' %>
 
-<div class="content">
-  <ul class="table-view">
+<div class="content coupons coupons-index common-cardlist">
+  <ul class="table-view  no-border">
     <% @coupons.each do |coupon| %>
-    <li class="table-view-cell media">
-      <a class="navigate-right" href="<%= coupon_path(coupon) %>" data-transition="slide-in">
-        <div class="media-body">
-          <%= coupon.title %>
-          <%= image_tag coupon.feature_image.url(:middle) %>
-          <p><%= coupon.subtitle %></p>
-        </div>
-      </a>
-    </li>
+      <%= render :partial => 'coupons/listitem', :locals => { coupon: coupon } %>
     <% end %>
   </ul>
 </div>
