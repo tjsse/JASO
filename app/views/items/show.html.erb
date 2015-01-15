@@ -1,0 +1,23 @@
+<%= render :partial => 'common/header', :locals => { :back_left => true, :section => 'activities' } %>
+
+<div class="content common-show pt10 plr10">
+  <header class="mt10 mb10">
+    <h1 class="common-heading">
+      <%= @item.title %>
+    </h1> 
+    <div>
+      <span>
+        <%= fa_icon 'building' %>
+        <%= link_to @item.shop.name, shop_path(@item.shop) %>
+      </span>
+    </div>
+  </header>
+
+  <div class="feature-img-wrap">
+    <%= image_tag @item.feature_img.url(:middle), :class => 'feature-img' %>
+  </div>
+
+  <p>
+    <%= @item.detail %>
+  </p>
+</div>

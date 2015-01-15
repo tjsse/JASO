@@ -1,0 +1,11 @@
+<li class="table-view-cell media common-card mb10">
+  <a class="navigate-right disp-block no-padding no-margin" href="<%= item_path(item) %>" data-transition="slide-in">
+    <div class="feature-img-wrap">
+      <%= image_tag item.feature_img.url(:middle), :class => 'feature-img' %>
+    </div>
+    <div class="content-wrap plr20 ptb10">
+      <p class="common-heading"><%= item.title %></p>
+      <p><%= item.summary %></p>
+    </div>
+  </a>
+</li>

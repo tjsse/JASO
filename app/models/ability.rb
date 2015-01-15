@@ -35,6 +35,9 @@ class Ability
             can :manage, :all
         else
             can :manage, Shop, :user_id => user.id
+            can :manage, Item, :shop_id => user.shop.id
+            can :manage, Activity, :shop_id => user.shop.id
+            can :manage, Coupon, :shop_id => user.shop.id
         end
     end
   end

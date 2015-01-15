@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :items
+
   get 'map/index', :as => :map
   get 'search', :controller => :search, :action => :index, :as => :search
 
@@ -13,7 +15,11 @@ Rails.application.routes.draw do
       post 'consume'
     end
   end 
-  resources :shops
+  resources :shops do
+    collection do
+      get 'couponmgr'
+    end
+  end
   resources :activities
   root 'activities#index'
 

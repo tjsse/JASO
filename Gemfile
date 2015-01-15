@@ -18,6 +18,7 @@ gem 'therubyracer',  platforms: :ruby
 gem 'rails-assets-jquery'
 gem 'rails-assets-underscore'
 gem 'rails-assets-jquery-ujs'
+gem 'rails-assets-bootstrap'
 gem 'rails-assets-ratchet', '2.0.2'
 gem 'font-awesome-rails'
 
@@ -31,7 +32,7 @@ gem 'devise'
 gem 'cancan'  
 
 # Rails Admin for Administration
-gem 'rails_admin'
+gem 'rails_admin', '0.6.5'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'

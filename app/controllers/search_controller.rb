@@ -5,6 +5,7 @@ class SearchController < ApplicationController
       @coupons = Coupon.search(params[:keyword])
       @shops = Shop.search(params[:keyword])
       @activities = Activity.search(params[:keyword])
+      @items = Item.search(params[:keyword])
     end
   end
 end

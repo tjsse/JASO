@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101134139) do
+ActiveRecord::Schema.define(version: 20150115105109) do
 
   create_table "activities", force: true do |t|
     t.string   "title"
@@ -51,6 +51,20 @@ ActiveRecord::Schema.define(version: 20150101134139) do
   end
 
   add_index "coupons", ["shop_id"], name: "index_coupons_on_shop_id"
+
+  create_table "items", force: true do |t|
+    t.integer  "shop_id"
+    t.string   "title"
+    t.float    "price"
+    t.string   "summary"
+    t.string   "detail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "feature_img_file_name"
+    t.string   "feature_img_content_type"
+    t.integer  "feature_img_file_size"
+    t.datetime "feature_img_updated_at"
+  end
 
   create_table "shops", force: true do |t|
     t.string   "name"

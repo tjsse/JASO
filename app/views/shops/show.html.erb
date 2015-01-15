@@ -49,6 +49,19 @@
       <% end %>
     </ul>
   </section>
+
+  <section class="sub">
+    <header class="mb10 plr10">
+      <%= fa_icon 'empire' %>
+      商品推荐
+    </header>
+
+    <ul class="table-view no-border">
+      <% @shop.items.each do |item| %>
+        <%= render :partial => 'items/listitem', :locals => { item: item } %>
+      <% end %>
+    </ul>
+  </section>
 </div>
 
 

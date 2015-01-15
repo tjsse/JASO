@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>优惠券管理</h1>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>优惠券</th>
+          <th>电话号</th>
+          <th>确认</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @shop.coupons.each do |coupon|%>
+        <% coupon.coupon_use_records.each do |coupon_use_record| %>
+        <% next if coupon_use_record.confirmed %>
+        <tr data-id="<%= coupon_use_record.id %>">
+          <th scope="row"><%= coupon_use_record.id %></th>
+          <td><%= coupon.title %></td>
+          <td><%= coupon_use_record.phone_number %></td>
+          <td><input type="text" class="form-control"></td>
+          <td><button class="btn btn-primary miss-btn" data-id="<%= coupon_use_record.id %>">确认</button></td>
+        </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+</div>

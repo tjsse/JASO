@@ -61,6 +61,15 @@ class ShopsController < ApplicationController
     end
   end
 
+
+  def couponmgr
+    @shop = current_user.shop
+    if @shop.nil?
+      render :plain => 'Not Authorized'
+    end
+    render 'shops/couponmgr', :layout => 'couponmgr'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
